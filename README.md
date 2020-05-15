@@ -7,23 +7,10 @@ Ali H. Ali - Keenan Jacob - ChulWoong Kang - Ashby Saldivar - Xuan Yuan
 
 The problem given is to create a testing platform for the control system controls of a furuta pendulum or "rotation inverted prendulum". Our team must create a mathemtaical model of the given system along side a composed control system. To simplify this process further one must create a model in CoppelliaSim from the mathemtical model, then create code from matlab to control the model in CoppeliaSim, and lastly collect data from the simulation in CoppeliaSim within MATLAB.
 
-Couple of the resources used to create the project were I. Fantoni and R. Lozano, Nonlinear Control of Underactuated Mechanical Systems, Springer, London, UK, 2002 particularly chapter 6 that covers find the eqautions of motion by using the Euler-Lagrange formulation. Another resource was the Professor Bank’s CoppeliaSim resource videos used to create the model in CoppeliaSim and properly arranging the model to run well during simulations. The last resource used was the manual on API functions with CoppeliaSim by Coppelia Robotics to create code with CoppeliaSim for the model and to connect with MATLAB.
-
 ![image](https://user-images.githubusercontent.com/65076893/82099527-6a520680-96bc-11ea-9868-1ad7c26ac722.png)
 
 
-[![Watch the video](https://user-images.githubusercontent.com/65076893/82101816-6c1ec880-96c2-11ea-87fd-12835277af05.jpg)]   (https://www.youtube.com/watch?v=XKzzWe15DEw)
-Sample Video
-
-
 ### Modeling 
-The calculations of the Furuta Pendulum were based on the Lagrange method by using the total energies of the system.
-
-
-### Controller Design and Simulations
-
-For this project, the control of the dynamics was to be implemented through CoppeliaSim (formerly V-Rep). Coppelia allows a user to create a system using simple blocks while accurately computing dynamic properties such as moment of intertia based on some user imput. 
-Since the state variable to control consisted of θ, φ, dθ/dt, and dφ/dt, those variable were collected 
 
 
 ### Appendix A: Simulation Code
@@ -136,6 +123,15 @@ plot(timeMatrix(:,1), timeMatrix(:,6))
 
 ```
 
+### Controller Design and Simulations
+
+
+For this project, the control of the dynamics was to be implemented through CoppeliaSim (formerly V-Rep). Coppelia allows a user to create a system using simple blocks while accurately computing dynamic properties such as moment of intertia based on some user imput.
+
+In order to control the pendulum, we connected Matlab with Coppelia using Coppelia's remote Api capability for Matlab. This was beneficial for our group as we are more familiar with Matlab syntax. Unfortunately, Matlab cannot send input to Coppelia until the simulation starts. This means that even if the pendulum initial position is up, it will fall over before the control from Matlab is sent. To prevent this, a gate type system placed to stop the pendulum from falling, then moved away once the control from Matlab was implemented.
+
+
+Since the state variable to control consisted of θ, φ, dθ/dt, and dφ/dt, those variable were collected and send to Matlab using remoteApi functions. Matlab could take in the instantaneous state space variables and reply to Coppelia with the appropriate torque control.
 
 
 
