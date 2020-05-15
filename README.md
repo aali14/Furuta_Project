@@ -13,6 +13,7 @@ Couple of the resources used to create the project were I. Fantoni and R. Lozano
 
 
 [![Watch the video](https://user-images.githubusercontent.com/65076893/82101816-6c1ec880-96c2-11ea-87fd-12835277af05.jpg)](https://www.youtube.com/watch?v=XKzzWe15DEw)
+Sample Video
 
 
 ### Modeling 
