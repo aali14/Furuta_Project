@@ -7,25 +7,10 @@ Ali H. Ali - Keenan Jacob - ChulWoong Kang - Ashby Saldivar - Xuan Yuan
 
 The problem given is to create a testing platform for the control system controls of a furuta pendulum or "rotation inverted prendulum". Our team must create a mathemtaical model of the given system along side a composed control system. To simplify this process further one must create a model in CoppelliaSim from the mathemtical model, then create code from matlab to control the model in CoppeliaSim, and lastly collect data from the simulation in CoppeliaSim within MATLAB.
 
-Couple of the resources used to create the project were I. Fantoni and R. Lozano, Nonlinear Control of Underactuated Mechanical Systems, Springer, London, UK, 2002 particularly chapter 6 that covers find the eqautions of motion by using the Euler-Lagrange formulation. Another resource was the Professor Bank’s CoppeliaSim resource videos used to create the model in CoppeliaSim and properly arranging the model to run well during simulations. The last resource used was the manual on API functions with CoppeliaSim by Coppelia Robotics to create code with CoppeliaSim for the model and to connect with MATLAB.
-
 ![image](https://user-images.githubusercontent.com/65076893/82099527-6a520680-96bc-11ea-9868-1ad7c26ac722.png)
 
 
 ### Modeling 
-The calculations of the Furuta Pendulum were based on the Lagrange method using the total energies of the system.
-
-![Screenshot (76)](https://user-images.githubusercontent.com/64936694/82103754-244f6f80-96c9-11ea-8725-ac212b8350dc.png)
-
-For the potential energy of the system,
-
-![Screenshot (77)](https://user-images.githubusercontent.com/64936694/82103801-49dc7900-96c9-11ea-8bfb-2871032890fe.png)
-
-
-To find the kinetic energy of the system, we use position of the pendulum center of mass and take time 
-
-![Screenshot (75)](https://user-images.githubusercontent.com/64936694/82103476-fe759b00-96c7-11ea-9f4c-a1587b37b70e.png)
-
 
 
 ### Appendix A: Simulation Code
@@ -133,9 +118,6 @@ hold on;
 %plot(timeMatrix(:,1), timeMatrix(:,4))
 plot(timeMatrix(:,1), timeMatrix(:,6))
 %legend('penangle', 'penvelocity(m/s)', 'armvel', 'armposition')
-
-
-
 ```
 
 ### Controller Design and Simulations
@@ -145,8 +127,24 @@ For this project, the control of the dynamics was to be implemented through Copp
 
 In order to control the pendulum, we connected Matlab with Coppelia using Coppelia's remote Api capability for Matlab. This was beneficial for our group as we are more familiar with Matlab syntax. Unfortunately, Matlab cannot send input to Coppelia until the simulation starts. This means that even if the pendulum initial position is up, it will fall over before the control from Matlab is sent. To prevent this, a gate type system placed to stop the pendulum from falling, then moved away once the control from Matlab was implemented.
 
-![image](https://github.com/aali14/Furuta_Project/issues/3#issue-619314353)
+![image2](https://github.com/aali14/Furuta_Project/issues/3#issue-619314353)
 
+For this project, we had control over the torque of the center motor. In order to determine the torque that needs to be applied, the K matrix must be solved for. 
+
+dx/dt = (A - BK)x
+and
+torque = Kx
+
+
+In order to solve for the K matrix, we used Matlab's place function. This function is only valid if the rank of the controllablity matrix is equal to the number of state variables. A quick function used to varify this condition in Matlab was:
+
+`Controlrank = rank(ctrb(A,B))`
+
+Since this value was equal to 4, we found the gain (K) by the following
+`K = eig(A,B,eigs)`
+were eigs is matrix of the desired poles of the system.
+
+With K known, the next step is to collect instantaneous values of the angle and angular velocity of the revolute joints. To do this, 
 Since the state variable to control consisted of θ, φ, dθ/dt, and dφ/dt, those variable were collected and send to Matlab using remoteApi functions. Matlab could take in the instantaneous state space variables and reply to Coppelia with the appropriate torque control.
 
 
