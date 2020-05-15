@@ -15,7 +15,7 @@ Couple of the resources used to create the project were I. Fantoni and R. Lozano
 ### Modeling 
 The calculations of the Furuta Pendulum were based on the Lagrange method using the total energies of the system.
 
-
+![Screenshot (76)](https://user-images.githubusercontent.com/64936694/82103754-244f6f80-96c9-11ea-8725-ac212b8350dc.png)
 
 For the potential energy of the system,
 
