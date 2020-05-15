@@ -11,21 +11,7 @@ The problem given is to create a testing platform for the control system control
 
 
 ### Modeling 
-The calculations of the Furuta Pendulum were based on the Lagrange method using the total energies of the system.
 
-![Screenshot (76)](https://user-images.githubusercontent.com/64936694/82104415-b2c4f080-96cb-11ea-8d65-c7831d1265c8.png)
-
-For the potential energy of the system,
-
-![Screenshot (77)](https://user-images.githubusercontent.com/64936694/82104443-d12aec00-96cb-11ea-976c-0483b96b9e6a.png)
-
-To find the kinetic energy of the system, we use position of the pendulum center of mass and take time derivative
-
-![Screenshot (75)](https://user-images.githubusercontent.com/64936694/82104453-d8ea9080-96cb-11ea-9eeb-e6c3c124b89d.png)
-
-By squaring the velocity term, we get 
-
-![Screenshot (78)](https://user-images.githubusercontent.com/64936694/82104479-f3246e80-96cb-11ea-89a6-91ca0526fb51.png)
 
 ### Appendix A: Simulation Code
 ```Introduction
@@ -142,6 +128,7 @@ For this project, the control of the dynamics was to be implemented through Copp
 In order to control the pendulum, we connected Matlab with Coppelia using Coppelia's remote Api capability for Matlab. This was beneficial for our group as we are more familiar with Matlab syntax. Unfortunately, Matlab cannot send input to Coppelia until the simulation starts. This means that even if the pendulum initial position is up, it will fall over before the control from Matlab is sent. To prevent this, a gate type system placed to stop the pendulum from falling, then moved away once the control from Matlab was implemented.
 
 ![image](https://user-images.githubusercontent.com/35712553/82102407-514d5380-96c4-11ea-901d-b92578075746.png)
+Figure 2: 
 
 For this project, we had control over the torque of the center motor. In order to determine the torque that needs to be applied, the K matrix must be solved for. 
 
@@ -158,7 +145,8 @@ Since this value was equal to 4, we found the gain (K) by the following
 `K = eig(A,B,eigs)`
 were eigs is matrix of the desired poles of the system.
 
-With K known, the next step is to collect instantaneous values of the angle and angular velocity of the revolute joints. To do this, 
+With K known, the next step is to collect instantaneous values of the angle and angular velocity of the revolute joints. To do this, we used Coppelias remoteApi get commands, which collected the data of  θ, φ, dθ/dt, and dφ/dt.
+
 Since the state variable to control consisted of θ, φ, dθ/dt, and dφ/dt, those variable were collected and send to Matlab using remoteApi functions. Matlab could take in the instantaneous state space variables and reply to Coppelia with the appropriate torque control.
 
 
