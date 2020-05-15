@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Furuta Pendulum
 
 You can use the [editor on GitHub](https://github.com/aali14/Furuta_Project/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
