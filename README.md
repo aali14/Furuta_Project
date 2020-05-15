@@ -4,12 +4,11 @@ You can use the [editor on GitHub](https://github.com/aali14/Furuta_Project/edit
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-![samplepic](https://user-images.githubusercontent.com/65076893/82098949-dfbcd780-96ba-11ea-8e04-d69436929533.jpg)
-
-
 ### Introduction
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The problem given is to create a testing platform for the control system controls of a furuta pendulum or "rotation inverted prendulum". Our team must create a mathemtaical model of the given system along side a composed control system. To simplify this process further one must create a model in CoppelliaSim from the mathemtical model, then create code from matlab to control the model in CoppeliaSim, and lastly collect data from the simulation in CoppeliaSim within MATLAB.
+
+Some of the resources used to create the project were
 
 ```Introduction
 clc
