@@ -9,10 +9,10 @@ The problem given is to create a testing platform for the control system control
 
 Couple of the resources used to create the project were I. Fantoni and R. Lozano, Nonlinear Control of Underactuated Mechanical Systems, Springer, London, UK, 2002 particularly chapter 6 that covers find the eqautions of motion by using the Euler-Lagrange formulation. Another resource was the Professor Bank’s CoppeliaSim resource videos used to create the model in CoppeliaSim and properly arranging the model to run well during simulations. The last resource used was the manual on API functions with CoppeliaSim by Coppelia Robotics to create code with CoppeliaSim for the model and to connect with MATLAB.
 
-![image](https://user-images.githubusercontent.com/65076893/82099527-6a520680-96bc-11ea-9868-1ad7c26ac722.png)
+           ![image](https://user-images.githubusercontent.com/65076893/82099527-6a520680-96bc-11ea-9868-1ad7c26ac722.png)
 
 
-[![Watch the video](https://user-images.githubusercontent.com/65076893/82101816-6c1ec880-96c2-11ea-87fd-12835277af05.jpg)](https://www.youtube.com/watch?v=XKzzWe15DEw)
+         [![Watch the video](https://user-images.githubusercontent.com/65076893/82101816-6c1ec880-96c2-11ea-87fd-12835277af05.jpg)]                                                  (https://www.youtube.com/watch?v=XKzzWe15DEw)
 Sample Video
 
 
