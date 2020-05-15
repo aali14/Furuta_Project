@@ -19,6 +19,7 @@ The calculations of the Furuta Pendulum were based on the Lagrange method using 
 
 For the potential energy of the system,
 
+![Screenshot (77)](https://user-images.githubusercontent.com/64936694/82103801-49dc7900-96c9-11ea-8bfb-2871032890fe.png)
 
 
 To find the kinetic energy of the system, we use position of the pendulum center of mass and take time 
