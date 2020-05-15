@@ -117,8 +117,7 @@ plot(timeMatrix(:,1), timeMatrix(:,6))
 
 # Header 1
 4- Controller Design and Simulations
-
-![](https://user-images.githubusercontent.com/35712553/82099457-48f11a80-96bc-11ea-9853-a398745faa6c.png)
+![](https://user-images.githubusercontent.com/63712299/82100580-d2095100-96be-11ea-9875-3fc6c257d5cd.png)
 
 
 
