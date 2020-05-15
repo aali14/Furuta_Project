@@ -12,6 +12,11 @@ The problem given is to create a testing platform for the control system control
 
 ### Modeling 
 
+### Controller Design and Simulations
+
+For this project, the control of the dynamics was to be implemented through CoppeliaSim (formerly V-Rep). Coppelia allows a user to create a system using simple blocks while accurately computing dynamic properties such as moment of intertia based on some user imput. 
+Since the state variable to control consisted of θ, φ, dθ/dt, and dφ/dt, those variable were collected 
+
 
 ### Appendix A: Simulation Code
 ```Introduction
@@ -123,10 +128,6 @@ plot(timeMatrix(:,1), timeMatrix(:,6))
 
 ```
 
-### Controller Design and Simulations
-
-For this project, the control of the dynamics was to be implemented through CoppeliaSim (formerly V-Rep). Coppelia allows a user to create a system using simple blocks while accurately computing dynamic properties such as moment of intertia based on some user imput. 
-Since the state variable to control consisted of θ, φ, dθ/dt, and dφ/dt, those variable were collected 
 
 
 
