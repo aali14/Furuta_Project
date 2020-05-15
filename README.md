@@ -3,10 +3,9 @@ Project Team Members:
 Ali H. Ali - Keenan Jacob - ChulWoong Kang - Ashby Saldivar - Xuan Yuan
 
 ### Introduction
+![](https://github.com/aali14/Furuta_Project/issues/1#issue-619286201)
 
 The problem given is to create a testing platform for the control system controls of a furuta pendulum or "rotation inverted prendulum". Our team must create a mathemtaical model of the given system along side a composed control system. To simplify this process further one must create a model in CoppelliaSim from the mathemtical model, then create code from matlab to control the model in CoppeliaSim, and lastly collect data from the simulation in CoppeliaSim within MATLAB.
-
-![01](https://user-images.githubusercontent.com/65076893/82099527-6a520680-96bc-11ea-9868-1ad7c26ac722.png)
 
 Some of the resources used to create the project were
 
@@ -130,7 +129,7 @@ plot(timeMatrix(:,1), timeMatrix(:,6))
 
 [Link](url) and ![Image](src)
 ```
-![](https://github.com/aali14/Furuta_Project/issues/1#issue-619286201)
+
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
