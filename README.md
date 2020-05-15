@@ -7,7 +7,8 @@ Ali H. Ali - Keenan Jacob - ChulWoong Kang - Ashby Saldivar - Xuan Yuan
 
 The problem given is to create a testing platform for the control system controls of a furuta pendulum or "rotation inverted prendulum". Our team must create a mathemtaical model of the given system along side a composed control system. To simplify this process further one must create a model in CoppelliaSim from the mathemtical model, then create code from matlab to control the model in CoppeliaSim, and lastly collect data from the simulation in CoppeliaSim within MATLAB.
 
-Some of the resources used to create the project were
+Some of the resources used to create the project were I. Fantoni and R. Lozano, Nonlinear Control of Underactuated
+Mechanical Systems, Springer, London, UK, 2002 particularly chapter 6 that covers find the eqautions of motion by using the Euler-Lagrange formulation. Another resource was the Professor Bank's CoppeliaSim resource videos used to create the model in CoppeliaSim and properly arranging the model to run well during simulations.
 
 ```Introduction
 clc
@@ -117,9 +118,8 @@ plot(timeMatrix(:,1), timeMatrix(:,6))
 
 # Header 1
 4- Controller Design and Simulations
-![](https://user-images.githubusercontent.com/63712299/82100580-d2095100-96be-11ea-9875-3fc6c257d5cd.png)
-
-
+https://user-images.githubusercontent.com/35712553/82099457-48f11a80-96bc-11ea-9853-a398745faa6c.png
+### Header 3
 
 - Bulleted
 - List
