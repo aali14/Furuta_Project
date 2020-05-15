@@ -11,6 +11,12 @@ The problem given is to create a testing platform for the control system control
 
 
 ### Modeling 
+The calculations of the Furuta Pendulum were based on the Lagrange method using the total energies of the system.
+L=T-V
+For the potential energy of the system,
+V=m_p (L_p/2)g(cosθ-1)
+To find the kinetic energy of the system, we use position of the pendulum center of mass and take time derivative
+T=(1/2 J_r ) ∅^2+(1/2 J_p ) 〖∅'〗^2+1/2 m_p ([d/dt (L_r sin∅+L_p/2 sinθcos∅)]^2+[d/dt (L_r cos∅-L_p/2 sinθsin∅)]^2+[d/dt (L_p/2 ω_s θ)]^2)
 
 
 ### Appendix A: Simulation Code
