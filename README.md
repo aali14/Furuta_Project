@@ -16,31 +16,31 @@ Couple of the resources used to create the project were I. Fantoni and R. Lozano
 
 The calculations of the Furuta Pendulum were based on the Lagrange method using the total energies of the system.
 
-![Screenshot (81)](https://user-images.githubusercontent.com/64936694/82105687-7dbb9c80-96d1-11ea-9cca-3d3abb979d9a.png)
+![Screenshot (79)](https://user-images.githubusercontent.com/64936694/82105694-801df680-96d1-11ea-8159-1c9da47e4df0.png)
 
 For the potential energy of the system,
 
-![Screenshot (82)](https://user-images.githubusercontent.com/64936694/82105689-7e543300-96d1-11ea-8949-89cd40b97eff.png)
+![Screenshot (80)](https://user-images.githubusercontent.com/64936694/82105695-801df680-96d1-11ea-806c-d9a26436c55b.png)
 
 To find the kinetic energy of the system, we use position of the pendulum center of mass and take time derivative
 
-![Screenshot (83)](https://user-images.githubusercontent.com/64936694/82105690-7eecc980-96d1-11ea-9bce-b4eebbc94caf.png)
+![Screenshot (81)](https://user-images.githubusercontent.com/64936694/82105687-7dbb9c80-96d1-11ea-9cca-3d3abb979d9a.png)
 
 By squaring the velocity term, we get 
 
-![Screenshot (84)](https://user-images.githubusercontent.com/64936694/82105691-7eecc980-96d1-11ea-8a15-683435f4fe62.png)
+![Screenshot (82)](https://user-images.githubusercontent.com/64936694/82105689-7e543300-96d1-11ea-8949-89cd40b97eff.png)
 
 Substituting equations (2) & (3) into equation (1)
 
-![Screenshot (85)](https://user-images.githubusercontent.com/64936694/82105692-7f856000-96d1-11ea-9e33-d6e145cf1953.png)
+![Screenshot (83)](https://user-images.githubusercontent.com/64936694/82105690-7eecc980-96d1-11ea-9bce-b4eebbc94caf.png)
 
 The 1st equation of motion becomes 
 
-![Screenshot (79)](https://user-images.githubusercontent.com/64936694/82105694-801df680-96d1-11ea-8159-1c9da47e4df0.png)
+![Screenshot (84)](https://user-images.githubusercontent.com/64936694/82105691-7eecc980-96d1-11ea-8a15-683435f4fe62.png)
 
 The 2nd equation of motion becomes 
 
-![Screenshot (80)](https://user-images.githubusercontent.com/64936694/82105695-801df680-96d1-11ea-806c-d9a26436c55b.png)
+![Screenshot (85)](https://user-images.githubusercontent.com/64936694/82105692-7f856000-96d1-11ea-9e33-d6e145cf1953.png)
 
 
 ### Controller Design and Simulations
