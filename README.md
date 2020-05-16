@@ -57,7 +57,7 @@ In order to control the pendulum, we connected Matlab with Coppelia using Coppel
 
 ![image](https://user-images.githubusercontent.com/35712553/82102407-514d5380-96c4-11ea-901d-b92578075746.png)
 
-Figure 2: Coppelia model showing gate system<p align="center">
+<p align="center">Figure 2: Coppelia model showing gate system<p align="center">
 
 For this project, we had control over the torque of the center motor. In order to determine the torque that needs to be applied, the K matrix must be solved for. 
 
@@ -74,13 +74,13 @@ Since this value was equal to 4, we found the gain (K) by the following:
 
 `K = eig(A,B,eigs)`
 
-were eigs is matrix of the desired poles of the system.
+where eigs is matrix of the desired poles of the system.
 
 With K known, the next step is to collect instantaneous values of the angle and angular velocity of the revolute joints. To do this, we used Coppelia's remoteApi get commands, which collected the data of  θ, φ, dθ/dt, and dφ/dt. Without any torque, the values below were recorded.
 
 ![image](https://user-images.githubusercontent.com/35712553/82104771-04ba4600-96cd-11ea-836b-13811ae16e48.png)
 
-Figure 3: Plot of values retrieved from Coppelia with no torque applied<p align="center">
+<p align="center">Figure 3: Plot of values retrieved from Coppelia with no torque applied
 
 With the state space variables being collected almost instantaneously, we can multiply our gain, K, to solve for the required torque at each point. 
 
@@ -90,7 +90,7 @@ Using the Coppelia model, we were not able to balance the pendulum in the up pos
 
 ![image](https://user-images.githubusercontent.com/35712553/82105527-a55e3500-96d0-11ea-8876-733485b629b1.png)
 
-Figure 4: Torque applied<p align="center">
+<p align="center">Figure 4: Torque applied<p align="center">
 
 ### Conclusions
 
