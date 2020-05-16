@@ -5,7 +5,7 @@ Ali H. Ali - Keenan Jacob - ChulWoong Kang - Ashby Saldivar - Xuan Yuan
 
 ### Introduction
 
-The problem given is to create a testing platform for the control system that controls a furuta pendulum or “rotation inverted pendulum”. Our team must create a mathematical model of the given system alongside a composed control system. To simplify this process further one must create a model in CoppelliaSim from the mathematical model, then create code from MATLAB to control the model in CoppeliaSim, and lastly collect data from the simulation in CoppeliaSim within MATLAB.
+The problem given is to create a testing platform for the control system that controls a furuta pendulum or “rotation inverted pendulum”. Our team must create a mathematical model of the given system alongside a composed control system. To simplify this process further one must create a model in CoppelliaSim from the mathematical model, then construct a code from MATLAB to control the model in CoppeliaSim, and lastly collect data from the simulation in CoppeliaSim within MATLAB.
 
 Furuta Pendulum is an inverted pendulum system which balance itself by rotating its arm. The system figures the current state of the pendulum and rotate motor to erect the rod. To achieve such motion, the system must feed the information to itself.
 
