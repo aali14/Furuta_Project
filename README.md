@@ -162,7 +162,7 @@ Using the Coppelia model, we were not able to balance the pendulum in the up pos
 
 ![image](https://user-images.githubusercontent.com/35712553/82105527-a55e3500-96d0-11ea-8876-733485b629b1.png)
 
-Figure 4: Torque applied
+<p align="center">Figure 4: Torque applied
 
 ### Conclusions
 
