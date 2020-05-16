@@ -212,7 +212,7 @@ plot(timeMatrix(:,1), timeMatrix(:,6))
 ```
 
 ### Appendix B: Youtube video to show the coppelia model dynamics with control implemented 
-
+https://youtu.be/6LAAxMOQvUU 
 
 ### References:
 
