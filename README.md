@@ -211,6 +211,23 @@ plot(timeMatrix(:,1), timeMatrix(:,6))
 %legend('penangle', 'penvelocity(m/s)', 'armvel', 'armposition')
 ```
 
+### Appendix B: Youtube video to show the coppelia model dynamics with control implemented 
 
+
+### References:
+
+https://www.youtube.com/watch?v=M_jchYsTZvM&list=PLMrJAkhIeNNR20Mz-VpzgfQs5zrYi085m&index=13
+
+https://www.youtube.com/watch?reload=9&v=YcfARpQVKhU 
+
+https://www.youtube.com/watch?v=i0a7K0zAOX0
+
+https://www.youtube.com/watch?v=vRi2Up0yfyk
+
+I. Fantoni and R. Lozano, Nonlinear Control of Underactuated Mechanical Systems, Springer, London, UK, 2002 particularly chapter 6 that covers find the equations of motion by using the Euler-Lagrange formulation.
+
+Professor Bank’s CoppeliaSim resource videos used to create the model in CoppeliaSim and properly arranging the model to run well during simulations.
+
+The manual on API functions with CoppeliaSim by Coppelia Robotics to create code with CoppeliaSim for the model and to connect with MATLAB.
 
 
