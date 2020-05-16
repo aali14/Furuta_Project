@@ -44,7 +44,9 @@ The 2nd equation of motion becomes
 
 Linearizing about the unstable up position will give:
 
+![image](https://user-images.githubusercontent.com/35712553/82106469-0c321d00-96d6-11ea-8e4e-a4b8f3484129.png)
 
+From this, we may go about solving for the gain matrix K.
 
 ### Controller Design and Simulations
 
