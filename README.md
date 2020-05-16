@@ -57,7 +57,7 @@ In order to control the pendulum, we connected Matlab with Coppelia using Coppel
 
 ![image](https://user-images.githubusercontent.com/35712553/82102407-514d5380-96c4-11ea-901d-b92578075746.png)
 
-<p align="center">Figure 2: Coppelia model showing gate system<p align="center">
+<p align="center">Figure 2: Coppelia model showing gate system
 
 For this project, we had control over the torque of the center motor. In order to determine the torque that needs to be applied, the K matrix must be solved for. 
 
