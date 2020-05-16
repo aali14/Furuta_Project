@@ -141,13 +141,22 @@ In order to solve for the K matrix, we used Matlab's place function. This functi
 
 `Controlrank = rank(ctrb(A,B))`
 
-Since this value was equal to 4, we found the gain (K) by the following
+Since this value was equal to 4, we found the gain (K) by the following:
+
 `K = eig(A,B,eigs)`
+
 were eigs is matrix of the desired poles of the system.
 
-With K known, the next step is to collect instantaneous values of the angle and angular velocity of the revolute joints. To do this, we used Coppelias remoteApi get commands, which collected the data of  θ, φ, dθ/dt, and dφ/dt.
+With K known, the next step is to collect instantaneous values of the angle and angular velocity of the revolute joints. To do this, we used Coppelia's remoteApi get commands, which collected the data of  θ, φ, dθ/dt, and dφ/dt. Without any torque, the values below were recorded.
 
-Since the state variable to control consisted of θ, φ, dθ/dt, and dφ/dt, those variable were collected and send to Matlab using remoteApi functions. Matlab could take in the instantaneous state space variables and reply to Coppelia with the appropriate torque control.
+![image](https://user-images.githubusercontent.com/35712553/82104771-04ba4600-96cd-11ea-836b-13811ae16e48.png)
+Figure 3: Plot of values retrieved from Coppelia with no torque applied
+
+With the state space variables being collected almost instantaneously, we can multiply our gain, K, to solve for the required torque at each point. 
+
+### Results
+
+Using the Coppelia model, we were not able to balance the pendulum in the up position. It seemed that the torque was not applied fast enough to combat the pendulum falling. There are a multitude of reasons this could be the case. It is possible that since Matlab and Coppelia were not linked in Synchronous mode, the connection between the two was not fast enough. Another possible reason for the lack of balance could be that some of the model properties were not correct. Although we attempted to combat these problems by adjusting input values (i.e. the torque/angle), we were unsuccessful. 
 
 
 
