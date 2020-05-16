@@ -12,84 +12,6 @@ The problem given is to create a testing platform for the control system control
 
 ### Modeling 
 
-The calculations of the Furuta Pendulum were based on the Lagrange method using the total energies of the system.
-
-![Screenshot (81)](https://user-images.githubusercontent.com/64936694/82105687-7dbb9c80-96d1-11ea-9cca-3d3abb979d9a.png)
-
-For the potential energy of the system,
-
-![Screenshot (82)](https://user-images.githubusercontent.com/64936694/82105689-7e543300-96d1-11ea-8949-89cd40b97eff.png)
-
-To find the kinetic energy of the system, we use position of the pendulum center of mass and take time derivative
-
-![Screenshot (83)](https://user-images.githubusercontent.com/64936694/82105690-7eecc980-96d1-11ea-9bce-b4eebbc94caf.png)
-
-By squaring the velocity term, we get 
-
-![Screenshot (84)](https://user-images.githubusercontent.com/64936694/82105691-7eecc980-96d1-11ea-8a15-683435f4fe62.png)
-
-Substituting equations (2) & (3) into equation (1)
-
-![Screenshot (85)](https://user-images.githubusercontent.com/64936694/82105692-7f856000-96d1-11ea-9e33-d6e145cf1953.png)
-
-The 1st equation of motion becomes 
-
-![Screenshot (79)](https://user-images.githubusercontent.com/64936694/82105694-801df680-96d1-11ea-8159-1c9da47e4df0.png)
-
-The 2nd equation of motion becomes 
-
-![Screenshot (80)](https://user-images.githubusercontent.com/64936694/82105695-801df680-96d1-11ea-806c-d9a26436c55b.png)
-
-
-
-### Controller Design and Simulations
-
-
-For this project, the control of the dynamics was to be implemented through CoppeliaSim (formerly V-Rep). Coppelia allows a user to create a system using simple blocks while accurately computing dynamic properties such as moment of intertia based on some user imput.
-
-In order to control the pendulum, we connected Matlab with Coppelia using Coppelia's remote Api capability for Matlab. This was beneficial for our group as we are more familiar with Matlab syntax. Unfortunately, Matlab cannot send input to Coppelia until the simulation starts. This means that even if the pendulum initial position is up, it will fall over before the control from Matlab is sent. To prevent this, a gate type system placed to stop the pendulum from falling, then moved away once the control from Matlab was implemented.
-
-![image](https://user-images.githubusercontent.com/35712553/82102407-514d5380-96c4-11ea-901d-b92578075746.png)
-
-Figure 2: Coppelia model showing gate system
-
-For this project, we had control over the torque of the center motor. In order to determine the torque that needs to be applied, the K matrix must be solved for. 
-
-dx/dt = (A - BK)x
-and
-torque = Kx
-
-
-In order to solve for the K matrix, we used Matlab's place function. This function is only valid if the rank of the controllablity matrix is equal to the number of state variables. A quick function used to varify this condition in Matlab was:
-
-`Controlrank = rank(ctrb(A,B))`
-
-Since this value was equal to 4, we found the gain (K) by the following:
-
-`K = eig(A,B,eigs)`
-
-were eigs is matrix of the desired poles of the system.
-
-With K known, the next step is to collect instantaneous values of the angle and angular velocity of the revolute joints. To do this, we used Coppelia's remoteApi get commands, which collected the data of  θ, φ, dθ/dt, and dφ/dt. Without any torque, the values below were recorded.
-
-![image](https://user-images.githubusercontent.com/35712553/82104771-04ba4600-96cd-11ea-836b-13811ae16e48.png)
-
-Figure 3: Plot of values retrieved from Coppelia with no torque applied
-
-With the state space variables being collected almost instantaneously, we can multiply our gain, K, to solve for the required torque at each point. 
-
-### Results
-
-Using the Coppelia model, we were not able to balance the pendulum in the up position. It seemed that the torque was not applied fast enough to combat the pendulum falling. There are a multitude of reasons this could be the case. It is possible that since Matlab and Coppelia were not linked in Synchronous mode, the connection between the two was not fast enough. Another possible reason for the lack of balance could be that some of the model properties were not correct. Although we attempted to combat these problems by adjusting input values (i.e. the torque/angle), we were unsuccessful. 
-
-![image](https://user-images.githubusercontent.com/35712553/82105527-a55e3500-96d0-11ea-8876-733485b629b1.png)
-
-Figure 4: Torque applied
-
-### Conclusions
-
-While this project was a great learning experience for working with Coppelia and applying control theory to physical systems, we were not able to reproduce the balanced pendulum. While further adjusting of parameters might yield closer results, it is also possible that something is fundamentally incorrect with the Matlab code. 
-
 
 ### Appendix A: Simulation Code
 ```Introduction
@@ -197,4 +119,56 @@ hold on;
 plot(timeMatrix(:,1), timeMatrix(:,6))
 %legend('penangle', 'penvelocity(m/s)', 'armvel', 'armposition')
 ```
+
+### Controller Design and Simulations
+
+
+For this project, the control of the dynamics was to be implemented through CoppeliaSim (formerly V-Rep). Coppelia allows a user to create a system using simple blocks while accurately computing dynamic properties such as moment of intertia based on some user imput.
+
+In order to control the pendulum, we connected Matlab with Coppelia using Coppelia's remote Api capability for Matlab. This was beneficial for our group as we are more familiar with Matlab syntax. Unfortunately, Matlab cannot send input to Coppelia until the simulation starts. This means that even if the pendulum initial position is up, it will fall over before the control from Matlab is sent. To prevent this, a gate type system placed to stop the pendulum from falling, then moved away once the control from Matlab was implemented.
+
+![image](https://user-images.githubusercontent.com/35712553/82102407-514d5380-96c4-11ea-901d-b92578075746.png)
+
+<p align="center">Figure 2: Coppelia model showing gate system<p align="center">
+
+For this project, we had control over the torque of the center motor. In order to determine the torque that needs to be applied, the K matrix must be solved for. 
+
+dx/dt = (A - BK)x
+and
+torque = Kx
+
+
+In order to solve for the K matrix, we used Matlab's place function. This function is only valid if the rank of the controllablity matrix is equal to the number of state variables. A quick function used to varify this condition in Matlab was:
+
+`Controlrank = rank(ctrb(A,B))`
+
+Since this value was equal to 4, we found the gain (K) by the following:
+
+`K = eig(A,B,eigs)`
+
+were eigs is matrix of the desired poles of the system.
+
+With K known, the next step is to collect instantaneous values of the angle and angular velocity of the revolute joints. To do this, we used Coppelia's remoteApi get commands, which collected the data of  θ, φ, dθ/dt, and dφ/dt. Without any torque, the values below were recorded.
+
+![image](https://user-images.githubusercontent.com/35712553/82104771-04ba4600-96cd-11ea-836b-13811ae16e48.png)
+
+<p align="center">Figure 3: Plot of values retrieved from Coppelia with no torque applied<p align="center">
+
+With the state space variables being collected almost instantaneously, we can multiply our gain, K, to solve for the required torque at each point. 
+
+### Results
+
+Using the Coppelia model, we were not able to balance the pendulum in the up position. It seemed that the torque was not applied fast enough to combat the pendulum falling. There are a multitude of reasons this could be the case. It is possible that since Matlab and Coppelia were not linked in Synchronous mode, the connection between the two was not fast enough. Another possible reason for the lack of balance could be that some of the model properties were not correct. Although we attempted to combat these problems by adjusting input values (i.e. the torque/angle), we were unsuccessful. 
+
+![image](https://user-images.githubusercontent.com/35712553/82105527-a55e3500-96d0-11ea-8876-733485b629b1.png)
+
+<p align="center">Figure 4: Torque applied<p align="center">
+
+### Conclusions
+
+While this project was a great learning experience for working with Coppelia and applying control theory to physical systems, we were not able to reproduce the balanced pendulum. While further adjusting of parameters might yield closer results, it is also possible that something is fundamentally incorrect with the Matlab code. 
+
+
+
+
 
