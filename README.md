@@ -55,9 +55,9 @@ For this project, the control of the dynamics was to be implemented through Copp
 
 In order to control the pendulum, we connected Matlab with Coppelia using Coppelia's remote Api capability for Matlab. This was beneficial for our group as we are more familiar with Matlab syntax. Unfortunately, Matlab cannot send input to Coppelia until the simulation starts. This means that even if the pendulum initial position is up, it will fall over before the control from Matlab is sent. To prevent this, a gate type system placed to stop the pendulum from falling, then moved away once the control from Matlab was implemented.
 
-<a href="#">![image](https://user-images.githubusercontent.com/35712553/82102407-514d5380-96c4-11ea-901d-b92578075746.png)</a>
+![image](https://user-images.githubusercontent.com/35712553/82102407-514d5380-96c4-11ea-901d-b92578075746.png)
 
-<p align="center">Figure 2: Coppelia model showing gate system<p align="center">
+Figure 2: Coppelia model showing gate system<p align="center">
 
 For this project, we had control over the torque of the center motor. In order to determine the torque that needs to be applied, the K matrix must be solved for. 
 
@@ -80,7 +80,7 @@ With K known, the next step is to collect instantaneous values of the angle and 
 
 ![image](https://user-images.githubusercontent.com/35712553/82104771-04ba4600-96cd-11ea-836b-13811ae16e48.png)
 
-<p align="center">Figure 3: Plot of values retrieved from Coppelia with no torque applied<p align="center">
+Figure 3: Plot of values retrieved from Coppelia with no torque applied<p align="center">
 
 With the state space variables being collected almost instantaneously, we can multiply our gain, K, to solve for the required torque at each point. 
 
@@ -90,7 +90,7 @@ Using the Coppelia model, we were not able to balance the pendulum in the up pos
 
 ![image](https://user-images.githubusercontent.com/35712553/82105527-a55e3500-96d0-11ea-8876-733485b629b1.png)
 
-<p align="center">Figure 4: Torque applied<p align="center">
+Figure 4: Torque applied<p align="center">
 
 ### Conclusions
 
