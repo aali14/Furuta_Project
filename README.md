@@ -7,7 +7,7 @@ Ali H. Ali - Keenan Jacob - ChulWoong Kang - Ashby Saldivar - Xuan Yuan
 
 The problem given is to create a testing platform for the control system controls of a furuta pendulum or "rotation inverted prendulum". Our team must create a mathemtaical model of the given system along side a composed control system. To simplify this process further one must create a model in CoppelliaSim from the mathemtical model, then create code from matlab to control the model in CoppeliaSim, and lastly collect data from the simulation in CoppeliaSim within MATLAB.
 
-![image](https://user-images.githubusercontent.com/65076893/82099527-6a520680-96bc-11ea-9868-1ad7c26ac722.png)
+<p align="center">![image](https://user-images.githubusercontent.com/65076893/82099527-6a520680-96bc-11ea-9868-1ad7c26ac722.png)
 
 
 ### Modeling 
@@ -127,9 +127,9 @@ For this project, the control of the dynamics was to be implemented through Copp
 
 In order to control the pendulum, we connected Matlab with Coppelia using Coppelia's remote Api capability for Matlab. This was beneficial for our group as we are more familiar with Matlab syntax. Unfortunately, Matlab cannot send input to Coppelia until the simulation starts. This means that even if the pendulum initial position is up, it will fall over before the control from Matlab is sent. To prevent this, a gate type system placed to stop the pendulum from falling, then moved away once the control from Matlab was implemented.
 
-![image](https://user-images.githubusercontent.com/35712553/82102407-514d5380-96c4-11ea-901d-b92578075746.png)
+<p align="center">![image](https://user-images.githubusercontent.com/35712553/82102407-514d5380-96c4-11ea-901d-b92578075746.png)
 
-Figure 2: Coppelia model showing gate system
+<p align="center">Figure 2: Coppelia model showing gate system
 
 For this project, we had control over the torque of the center motor. In order to determine the torque that needs to be applied, the K matrix must be solved for. 
 
@@ -150,9 +150,9 @@ were eigs is matrix of the desired poles of the system.
 
 With K known, the next step is to collect instantaneous values of the angle and angular velocity of the revolute joints. To do this, we used Coppelia's remoteApi get commands, which collected the data of  θ, φ, dθ/dt, and dφ/dt. Without any torque, the values below were recorded.
 
-![image](https://user-images.githubusercontent.com/35712553/82104771-04ba4600-96cd-11ea-836b-13811ae16e48.png)
+<p align="center">![image](https://user-images.githubusercontent.com/35712553/82104771-04ba4600-96cd-11ea-836b-13811ae16e48.png)
 
-Figure 3: Plot of values retrieved from Coppelia with no torque applied
+<p align="center">Figure 3: Plot of values retrieved from Coppelia with no torque applied
 
 With the state space variables being collected almost instantaneously, we can multiply our gain, K, to solve for the required torque at each point. 
 
@@ -160,7 +160,7 @@ With the state space variables being collected almost instantaneously, we can mu
 
 Using the Coppelia model, we were not able to balance the pendulum in the up position. It seemed that the torque was not applied fast enough to combat the pendulum falling. There are a multitude of reasons this could be the case. It is possible that since Matlab and Coppelia were not linked in Synchronous mode, the connection between the two was not fast enough. Another possible reason for the lack of balance could be that some of the model properties were not correct. Although we attempted to combat these problems by adjusting input values (i.e. the torque/angle), we were unsuccessful. 
 
-![image](https://user-images.githubusercontent.com/35712553/82105527-a55e3500-96d0-11ea-8876-733485b629b1.png)
+<p align="center">![image](https://user-images.githubusercontent.com/35712553/82105527-a55e3500-96d0-11ea-8876-733485b629b1.png)
 
 <p align="center">Figure 4: Torque applied
 
