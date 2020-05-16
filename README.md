@@ -16,31 +16,36 @@ A Couple of the resources used to create the project were I. Fantoni and R. Loza
 
 The calculations of the Furuta Pendulum were based on the Lagrange method using the total energies of the system.
 
-![Screenshot (79)](https://user-images.githubusercontent.com/64936694/82105694-801df680-96d1-11ea-8159-1c9da47e4df0.png)
+![Screenshot (96)](https://user-images.githubusercontent.com/64936694/82107074-d68f3300-96d9-11ea-92d8-688f851a2a9d.png)
 
 For the potential energy of the system,
 
-![Screenshot (80)](https://user-images.githubusercontent.com/64936694/82105695-801df680-96d1-11ea-806c-d9a26436c55b.png)
+![Screenshot (97)](https://user-images.githubusercontent.com/64936694/82107076-d727c980-96d9-11ea-908c-f32a0e3de5d9.png)
+
 
 To find the kinetic energy of the system, we use position of the pendulum center of mass and take time derivative
 
-![Screenshot (81)](https://user-images.githubusercontent.com/64936694/82105687-7dbb9c80-96d1-11ea-9cca-3d3abb979d9a.png)
+![Screenshot (98)](https://user-images.githubusercontent.com/64936694/82107078-d7c06000-96d9-11ea-8998-240686a27073.png)
+
 
 By squaring the velocity term, we get 
 
-![Screenshot (82)](https://user-images.githubusercontent.com/64936694/82105689-7e543300-96d1-11ea-8949-89cd40b97eff.png)
+![Screenshot (99)](https://user-images.githubusercontent.com/64936694/82107079-d7c06000-96d9-11ea-80fc-aa7fe4a4af96.png)
+
 
 Substituting equations (2) & (3) into equation (1)
 
-![Screenshot (83)](https://user-images.githubusercontent.com/64936694/82105690-7eecc980-96d1-11ea-9bce-b4eebbc94caf.png)
+![Screenshot (100)](https://user-images.githubusercontent.com/64936694/82107081-d858f680-96d9-11ea-859a-f4cfcbde8e98.png)
+
 
 The 1st equation of motion becomes 
 
-![Screenshot (84)](https://user-images.githubusercontent.com/64936694/82105691-7eecc980-96d1-11ea-8a15-683435f4fe62.png)
+![Screenshot (101)](https://user-images.githubusercontent.com/64936694/82107082-d8f18d00-96d9-11ea-8941-ecb690b3f5ea.png)
+
 
 The 2nd equation of motion becomes 
 
-![Screenshot (85)](https://user-images.githubusercontent.com/64936694/82105692-7f856000-96d1-11ea-9e33-d6e145cf1953.png)
+![Screenshot (102)](https://user-images.githubusercontent.com/64936694/82107083-d8f18d00-96d9-11ea-91e5-80dcbfa7bdd4.png)
 
 Linearizing about the unstable up position will give:
 
