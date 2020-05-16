@@ -159,11 +159,14 @@ With the state space variables being collected almost instantaneously, we can mu
 ### Results
 
 Using the Coppelia model, we were not able to balance the pendulum in the up position. It seemed that the torque was not applied fast enough to combat the pendulum falling. There are a multitude of reasons this could be the case. It is possible that since Matlab and Coppelia were not linked in Synchronous mode, the connection between the two was not fast enough. Another possible reason for the lack of balance could be that some of the model properties were not correct. Although we attempted to combat these problems by adjusting input values (i.e. the torque/angle), we were unsuccessful. 
-![image](https://user-images.githubusercontent.com/35712553/82105435-2406a280-96d0-11ea-8757-604211bec0d6.png)
+
+![image](https://user-images.githubusercontent.com/35712553/82105527-a55e3500-96d0-11ea-8876-733485b629b1.png)
 
 Figure 4: Torque applied
 
+### Conclusions
 
+While this project was a great learning experience for working with Coppelia and applying control theory to physical systems, we were not able to reproduce the balanced pendulum. While further adjusting of parameters might yield closer results, it is also possible that something is fundamentally incorrect with the Matlab code. 
 
 
 
