@@ -42,6 +42,9 @@ The 2nd equation of motion becomes
 
 ![Screenshot (85)](https://user-images.githubusercontent.com/64936694/82105692-7f856000-96d1-11ea-9e33-d6e145cf1953.png)
 
+Linearizing about the unstable up position will give:
+
+
 
 ### Controller Design and Simulations
 
